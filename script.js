@@ -52,8 +52,8 @@ document.addEventListener('DOMContentLoaded', () => {
         card.addEventListener('click', () => {
             const planetKey = card.getAttribute('data-planet');
             const data = planetData[planetKey];
-            
-            if(data) {
+
+            if (data) {
                 modalTitle.textContent = data.title;
                 modalDesc.textContent = data.desc;
                 modalDist.textContent = data.dist;
@@ -95,6 +95,41 @@ document.addEventListener('DOMContentLoaded', () => {
         {
             question: "What creates the heat and light of the Sun?",
             options: ["Burning Coal", "Nuclear Fusion", "Electricity", "Lava"],
+            correct: 1
+        },
+        {
+            question: "What is the name of the first man-made satellite sent into space?",
+            options: ["Apollo 11", "Sputnik 1", "Voyager 1", "Hubble"],
+            correct: 1
+        },
+        {
+            question: "Who was the first person to walk on the Moon?",
+            options: ["Yuri Gagarin", "Buzz Aldrin", "Neil Armstrong", "Michael Collins"],
+            correct: 2
+        },
+        {
+            question: "Which planet has the most extensive ring system?",
+            options: ["Jupiter", "Uranus", "Neptune", "Saturn"],
+            correct: 3
+        },
+        {
+            question: "What force keeps the planets in orbit around the Sun?",
+            options: ["Magnetism", "Gravity", "Friction", "Inertia"],
+            correct: 1
+        },
+        {
+            question: "What is the Great Red Spot on Jupiter?",
+            options: ["A giant storm", "An ocean", "A volcano", "A crater"],
+            correct: 0
+        },
+        {
+            question: "Which is the hottest planet in our solar system?",
+            options: ["Mercury", "Mars", "Venus", "Jupiter"],
+            correct: 2
+        },
+        {
+            question: "Approximately how long does it take for light from the Sun to reach Earth?",
+            options: ["8 seconds", "8 minutes", "8 hours", "8 days"],
             correct: 1
         }
     ];
@@ -138,12 +173,12 @@ document.addEventListener('DOMContentLoaded', () => {
             element.classList.add('wrong');
             feedbackEl.textContent = "Not quite. Try to remember for next time!";
             feedbackEl.style.color = "#f44336";
-            
+
             // Highlight correct answer
             const options = optionsEl.children;
             options[data.correct].classList.add('correct');
         }
-        
+
         nextBtn.classList.remove('hidden');
     }
 
