@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Space Explorers | Discover the Universe</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;700&family=Space+Grotesk:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header class="main-header">
+        <div class="container header-content">
+            <div class="logo">
+                <span class="logo-icon">🚀</span> SpaceExplorers
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#solar-system">Solar System</a></li>
+                    <li><a href="#technology">Space Tech</a></li>
+                    <li><a href="#quiz">Quiz Mission</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="hero">
+            <div class="stars"></div>
+            <div class="twinkling"></div>
+            <div class="container hero-container">
+                <div class="hero-text">
+                    <h1>Blast Off Into <span class="highlight">Science!</span></h1>
+                    <p>Join the mission to explore planets, stars, and the amazing technology that takes us there.</p>
+                    <a href="#solar-system" class="btn btn-primary">Start Journey</a>
+                </div>
+                <div class="hero-visual">
+                    <!-- CSS drawn Rocket -->
+                    <div class="rocket-ship">
+                        <div class="rocket-body">
+                            <div class="window"></div>
+                        </div>
+                        <div class="fin fin-left"></div>
+                        <div class="fin fin-right"></div>
+                        <div class="exhaust-flame"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Solar System Section -->
+        <section id="solar-system" class="solar-system">
+            <div class="container">
+                <header class="section-header">
+                    <h2>The Solar System</h2>
+                    <p>Click on a planet to learn more about our cosmic neighborhood.</p>
+                </header>
+                
+                <div class="planet-grid">
+                    <!-- Planets generated via JS or hardcoded with data attributes for interactivity -->
+                    <article class="planet-card" data-planet="mercury">
+                        <div class="planet-visual mercury"></div>
+                        <h3>Mercury</h3>
+                        <p>The swift planet.</p>
+                    </article>
+                    <article class="planet-card" data-planet="venus">
+                        <div class="planet-visual venus"></div>
+                        <h3>Venus</h3>
+                        <p>The hottest planet.</p>
+                    </article>
+                    <article class="planet-card" data-planet="earth">
+                        <div class="planet-visual earth"></div>
+                        <h3>Earth</h3>
+                        <p>Our home.</p>
+                    </article>
+                    <article class="planet-card" data-planet="mars">
+                        <div class="planet-visual mars"></div>
+                        <h3>Mars</h3>
+                        <p>The Red Planet.</p>
+                    </article>
+                    <article class="planet-card" data-planet="jupiter">
+                        <div class="planet-visual jupiter"></div>
+                        <h3>Jupiter</h3>
+                        <p>The Gas Giant.</p>
+                    </article>
+                    <article class="planet-card" data-planet="saturn">
+                        <div class="planet-visual saturn"></div>
+                        <h3>Saturn</h3>
+                        <p>The Ringed Jewel.</p>
+                    </article>
+                </div>
+
+                <!-- Hidden Info Modal Area -->
+                <dialog id="planet-modal" class="planet-modal">
+                    <div class="modal-content">
+                        <button id="close-modal" class="close-btn">&times;</button>
+                        <h2 id="modal-title">Planet Name</h2>
+                        <div class="modal-body">
+                            <p id="modal-desc">Description goes here.</p>
+                            <ul class="planet-facts">
+                                <li><strong>Distance from Sun:</strong> <span id="modal-dist">-</span></li>
+                                <li><strong>Moons:</strong> <span id="modal-moons">-</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </dialog>
+            </div>
+        </section>
+
+        <!-- Space Technology Section -->
+        <section id="technology" class="technology">
+            <div class="container">
+                <header class="section-header">
+                    <h2>Space Tech</h2>
+                    <p>How do we explore the universe?</p>
+                </header>
+
+                <div class="tech-layout">
+                    <div class="tech-images">
+                         <!-- CSS Satellite -->
+                         <div class="satellite">
+                            <div class="panel-left"></div>
+                            <div class="bus"></div>
+                            <div class="panel-right"></div>
+                            <div class="dish"></div>
+                         </div>
+                    </div>
+                    <div class="tech-content">
+                        <div class="tech-item">
+                            <h3>Rockets</h3>
+                            <p>Rockets are vehicles specifically designed to travel through outer space. They carry astronauts and satellites by blasting gas out behind them to push forward!</p>
+                        </div>
+                        <div class="tech-item">
+                            <h3>Satellites</h3>
+                            <p>These are machines we send into orbit. They help us with GPS, weather forecasting, and taking amazing pictures of deep space.</p>
+                        </div>
+                        <div class="tech-item">
+                            <h3>Rovers</h3>
+                            <p>Robotic cars that drive on other planets! Specifically Mars. They take soil samples and look for signs of water.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Interactive Quiz Section -->
+        <section id="quiz" class="quiz-section">
+            <div class="container small-container">
+                <header class="section-header">
+                    <h2>Mission Control Quiz</h2>
+                    <p>Test your knowledge, Cadet!</p>
+                </header>
+                
+                <div id="quiz-container">
+                    <!-- Quiz injected by JS -->
+                    <div class="quiz-question" id="question-text">Loading Mission...</div>
+                    <div class="quiz-options" id="quiz-options"></div>
+                    <div class="quiz-feedback" id="quiz-feedback"></div>
+                    <button id="next-btn" class="btn btn-secondary hidden">Next Mission</button>
+                    <div class="score-display" id="score-display"></div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="main-footer">
+        <div class="container">
+            <p>&copy; 2024 Space Explorers Academy. Keep looking up!</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
